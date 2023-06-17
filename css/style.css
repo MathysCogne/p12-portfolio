@@ -1,0 +1,98 @@
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain)*/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+.background {
+  background-color: black;
+}
+
+.container {
+  width: 85%;
+  max-width: 1150px;
+  min-height: 100vh;
+  margin: auto;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 900px) {
+  .container {
+    width: 95%;
+  }
+}
+
+h1, h2, h3, h4, a, a:link, p, li, ul, button {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+header {
+  padding: 20px 0;
+}
+header cont-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+header h1 {
+  height: 50vh;
+  font-size: 12vw;
+  text-align: right;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+header h1 span {
+  display: block;
+  margin-right: 18.35vw;
+}
+header h1::after {
+  content: "Web Developper \a Front-End | REACT";
+  white-space: pre-line;
+  font-size: 1.5vw;
+  display: block;
+  position: relative;
+  height: 30px;
+  margin-top: -4.58vw;
+}
+header h2 {
+  display: none;
+}
+header nav {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  color: #BDBDBD;
+  padding: 50px 0;
+}
+footer p {
+  font-size: 14px;
+}
+footer a {
+  color: #BDBDBD;
+  text-decoration: underline;
+}/*# sourceMappingURL=style.css.map */

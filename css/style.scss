@@ -1,0 +1,117 @@
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain)*/
+// // RESET CSS // /
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}body{line-height:1}
+// // // // // // //
+// // Variables // /
+$container-width-desktop: 85%;
+$container-width-mobile: 95%;
+
+$container-max-width: 1150px;
+$container-min-height: 100vh;
+
+$color-primary: white;
+$color-secondary: yellow;
+$color-tertiary: #F2F2F2;
+
+$background-calc: black;
+$background-primary: #fff;
+$background-secondary: #F2F2F2;
+
+$font-family-primary: 'Poppins', sans-serif;
+//$font-family-secondary: 'Open Sans', sans-serif;
+
+$border-radius: 12px;
+
+$transition-primary: all 0.3s ease-in-out;
+$transition-secondary: all 0.1s ease-in-out;
+
+$shadow-primary: 0 0 10px rgba(0, 0, 0, 0.1);
+
+$media-query: 900px;
+// // // // // // //
+// // background ///
+// // container // /
+.background {
+   background-color: $background-calc;
+}
+.container {
+   width: $container-width-desktop;
+   max-width: $container-max-width;
+   min-height: $container-min-height;
+   margin: auto;
+   box-sizing: border-box;
+   @media screen and (max-width: $media-query){
+      width: $container-width-mobile;
+   }
+}
+h1, h2, h3, h4, a, a:link, p, li, ul, button{ 
+   font-family: $font-family-primary;
+   color: $color-primary;
+
+}
+// // // // // // //
+
+img{
+   object-fit: cover;
+}
+a{
+   text-decoration: none;
+   color: #000;
+}
+
+header{
+   padding: 20px 0;
+   cont-title{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+   }
+   h1{
+      height: 50vh;
+
+      font-size: 12vw;
+      text-align: right;
+      text-transform: uppercase;
+      white-space: nowrap;
+      span{
+         display: block;
+         margin-right: 18.35vw;
+      }
+      &::after{
+         content: 'Web Developper \A Front-End | REACT';
+         white-space: pre-line;
+         font-size: 1.5vw;
+         display: block;
+         position: relative;
+         height: 30px;
+         margin-top: -4.58vw;
+      }
+   }
+   h2{
+      display: none;
+   }
+   nav{
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+   }
+}
+
+
+
+
+footer{
+   display: flex;
+   justify-content: center;
+   color: #BDBDBD;
+   padding: 50px 0;
+   p{
+      font-size: 14px;
+   }
+   a{
+      color: #BDBDBD;
+      text-decoration: underline;
+   }
+}
