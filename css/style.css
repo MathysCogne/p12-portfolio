@@ -41,13 +41,11 @@ img {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: white;
 }
 
-header {
-  padding: 20px 0;
-}
 header cont-title {
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,7 +54,7 @@ header cont-title {
 }
 header h1 {
   height: 50vh;
-  font-size: 12vw;
+  font-size: 11vw;
   text-align: right;
   text-transform: uppercase;
   white-space: nowrap;
@@ -68,7 +66,8 @@ header h1 span {
 header h1::after {
   content: "Web Developper \a Front-End | REACT";
   white-space: pre-line;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
+  font-weight: 300;
   display: block;
   position: relative;
   height: 30px;
@@ -78,21 +77,45 @@ header h2 {
   display: none;
 }
 header nav {
+  border: white solid 1px;
+  display: inline-flex;
   position: absolute;
+  height: 99.75vh;
+}
+header nav ul {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  text-transform: lowercase;
+  font-weight: 300;
 }
-
-footer {
-  display: flex;
-  justify-content: center;
-  color: #BDBDBD;
-  padding: 50px 0;
+header nav .nav-item {
+  list-style: none;
+  transform: rotateZ(-90deg);
+  cursor: pointer;
 }
-footer p {
-  font-size: 14px;
+header nav .nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22.5px;
+  width: 100%;
+  height: 2px;
+  transition: all 0.3s ease-in-out;
 }
-footer a {
-  color: #BDBDBD;
-  text-decoration: underline;
+header nav .nav-item:hover::after {
+  background-color: #FFD23F;
+  width: 50%;
+  right: 0;
+}
+header nav .nav-item a:hover {
+  filter: blur(0);
+}
+header nav .nav-item a {
+  transition: filter 0.25s ease-in-out;
+  filter: blur(0);
+}
+header nav .nav-item.flou a {
+  filter: blur(3px);
 }/*# sourceMappingURL=style.css.map */

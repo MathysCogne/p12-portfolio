@@ -10,8 +10,8 @@ $container-max-width: 1150px;
 $container-min-height: 100vh;
 
 $color-primary: white;
-$color-secondary: yellow;
-$color-tertiary: #F2F2F2;
+$color-secondary: #FFD23F;
+$color-tertiary: black;
 
 $background-calc: black;
 $background-primary: #fff;
@@ -23,7 +23,7 @@ $font-family-primary: 'Poppins', sans-serif;
 $border-radius: 12px;
 
 $transition-primary: all 0.3s ease-in-out;
-$transition-secondary: all 0.1s ease-in-out;
+// $transition-secondary: all 0.3s ease-in-out;
 
 $shadow-primary: 0 0 10px rgba(0, 0, 0, 0.1);
 
@@ -56,12 +56,12 @@ img{
 }
 a{
    text-decoration: none;
-   color: #000;
+   color: $color-primary;
 }
 
 header{
-   padding: 20px 0;
    cont-title{
+      padding-top: 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -71,7 +71,7 @@ header{
    h1{
       height: 50vh;
 
-      font-size: 12vw;
+      font-size: 11vw;
       text-align: right;
       text-transform: uppercase;
       white-space: nowrap;
@@ -82,7 +82,8 @@ header{
       &::after{
          content: 'Web Developper \A Front-End | REACT';
          white-space: pre-line;
-         font-size: 1.5vw;
+         font-size: 1.3vw;
+         font-weight: 300;
          display: block;
          position: relative;
          height: 30px;
@@ -93,25 +94,52 @@ header{
       display: none;
    }
    nav{
+      border: white solid 1px;
+      display: inline-flex;
       position: absolute;
-      display: flex;
-      justify-content: flex-start;
-   }
-}
+      height: 99.75vh;
+      ul{
+         display: flex;
+         justify-content: space-around;
+         flex-direction: column;
+         align-items: center;
+         text-transform: lowercase;
+         font-weight: 300;
+      }
+      .nav-item{
+         list-style: none;
+         transform: rotateZ(-90deg);
+         cursor: pointer;
 
+         // GESTION DE L'ANIM DU PETIT TRAIT 
+         &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 22.5px;
+            width: 100%;
+            height: 2px;
+         
+            transition: $transition-primary;
+         }
+         &:hover::after{
+            background-color: $color-secondary;
 
-
-
-footer{
-   display: flex;
-   justify-content: center;
-   color: #BDBDBD;
-   padding: 50px 0;
-   p{
-      font-size: 14px;
-   }
-   a{
-      color: #BDBDBD;
-      text-decoration: underline;
+            width: 50%;
+            right: 0;
+         }
+         //
+         a:hover {
+            filter: blur(0);
+            
+         }
+         a {
+            transition: filter 0.25s ease-in-out;
+            filter: blur(0);
+         }
+         &.flou a {
+            filter: blur(3px);
+         }
+      }
    }
 }
