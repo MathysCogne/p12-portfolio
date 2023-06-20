@@ -54,14 +54,16 @@ header cont-title {
 }
 header h1 {
   height: 50vh;
-  font-size: 11vw;
+  font-weight: 500;
+  font-size: 9vw;
   text-align: right;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-weight: 300;
   white-space: nowrap;
 }
 header h1 span {
   display: block;
-  margin-right: 18.35vw;
+  margin-right: 14.2vw;
 }
 header h1::after {
   content: "Web Developper \a Front-End | REACT";
@@ -71,16 +73,17 @@ header h1::after {
   display: block;
   position: relative;
   height: 30px;
-  margin-top: -4.58vw;
+  margin-top: -3.82vw;
+  text-transform: lowercase;
 }
 header h2 {
   display: none;
 }
 header nav {
-  border: white solid 1px;
+  border-right: white solid 1px;
   display: inline-flex;
   position: absolute;
-  height: 99.75vh;
+  height: 99.7vh;
 }
 header nav ul {
   display: flex;
@@ -93,7 +96,6 @@ header nav ul {
 header nav .nav-item {
   list-style: none;
   transform: rotateZ(-90deg);
-  cursor: pointer;
 }
 header nav .nav-item::after {
   content: "";
@@ -118,4 +120,53 @@ header nav .nav-item a {
 }
 header nav .nav-item.flou a {
   filter: blur(3px);
+}
+
+.cta-gh {
+  position: absolute;
+  top: 0px;
+  left: 123.7px;
+}
+.cta-icon {
+  fill: white;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 99px;
+  left: 47.5px;
+}
+
+.circular {
+  position: absolute;
+  width: calc(var(--total) * 5px);
+  height: calc(var(--total) * 5px);
+}
+.circular span {
+  --offset-path: path("M 0,50 a 50,50 0 1,1 0,1 z");
+  --offset-distance: calc(var(--i) / var(--total) * 100%);
+  position: absolute;
+  font-weight: 300;
+  color: white;
+  offset-path: var(--offset-path);
+  offset-distance: var(--offset-distance);
+  animation: spin 15s linear infinite;
+  font-size: 14px;
+}
+.circular:hover span {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  to {
+    offset-distance: calc(var(--offset-distance) + 100%);
+  }
+}
+#custom-cursor {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #FFD23F;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 99;
 }/*# sourceMappingURL=style.css.map */

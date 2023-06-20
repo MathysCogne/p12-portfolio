@@ -2,7 +2,8 @@
 // // RESET CSS // /
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}body{line-height:1}
 // // // // // // //
-// // Variables // /
+// // Var // / // //
+// // // // // // //
 $container-width-desktop: 85%;
 $container-width-mobile: 95%;
 
@@ -29,8 +30,8 @@ $shadow-primary: 0 0 10px rgba(0, 0, 0, 0.1);
 
 $media-query: 900px;
 // // // // // // //
-// // background ///
-// // container // /
+// // bcg cont // //
+// // // // // // //
 .background {
    background-color: $background-calc;
 }
@@ -50,7 +51,6 @@ h1, h2, h3, h4, a, a:link, p, li, ul, button{
 
 }
 // // // // // // //
-
 img{
    object-fit: cover;
 }
@@ -58,7 +58,9 @@ a{
    text-decoration: none;
    color: $color-primary;
 }
-
+// // // // // // //
+// // HEADER NAV ///
+// // // // // // //
 header{
    cont-title{
       padding-top: 30px;
@@ -70,14 +72,15 @@ header{
    }
    h1{
       height: 50vh;
-
-      font-size: 11vw;
+      font-weight: 500;
+      font-size: 9vw;
       text-align: right;
-      text-transform: uppercase;
+      text-transform: lowercase;
+      font-weight: 300;
       white-space: nowrap;
       span{
          display: block;
-         margin-right: 18.35vw;
+         margin-right: 14.2vw;
       }
       &::after{
          content: 'Web Developper \A Front-End | REACT';
@@ -87,17 +90,18 @@ header{
          display: block;
          position: relative;
          height: 30px;
-         margin-top: -4.58vw;
+         margin-top: -3.82vw;
+         text-transform: lowercase;
       }
    }
    h2{
       display: none;
    }
    nav{
-      border: white solid 1px;
+      border-right: white solid 1px;
       display: inline-flex;
       position: absolute;
-      height: 99.75vh;
+      height: 99.70vh;
       ul{
          display: flex;
          justify-content: space-around;
@@ -109,9 +113,9 @@ header{
       .nav-item{
          list-style: none;
          transform: rotateZ(-90deg);
-         cursor: pointer;
 
-         // GESTION DE L'ANIM DU PETIT TRAIT 
+         // ANIMATION DE LA BARRE DE NAVIGATION
+         // Trait sous les textes
          &::after{
             content: '';
             position: absolute;
@@ -128,7 +132,7 @@ header{
             width: 50%;
             right: 0;
          }
-         //
+         // Bleur des textes
          a:hover {
             filter: blur(0);
             
@@ -142,4 +146,65 @@ header{
          }
       }
    }
+}
+// // // // // // //
+// // CTA GITHUB ///
+// // // // // // //
+.cta {
+   &-gh{
+   position: absolute;
+   top: 0px;
+   left: 123.7px; // Largeur de la nav + Top
+   }
+   &-icon{
+      fill: white;
+      width: 50px;
+      height: 50px;
+      position: relative;
+      top: 99px;
+      left: 47.5px;
+   }
+}
+ 
+.circular {
+   position: absolute;
+   width: calc(var(--total) * 5px);
+   height: calc(var(--total) * 5px);
+ 
+   span {
+      --offset-path: path('M 0,50 a 50,50 0 1,1 0,1 z');
+      --offset-distance: calc(var(--i) / var(--total) * 100%);
+   
+      position: absolute;
+      font-weight: 300;
+      color: $color-primary;
+      offset-path: var(--offset-path);
+      offset-distance: var(--offset-distance);
+      animation: spin 15s linear infinite;
+      font-size: 14px;
+      // text-transform: lowercase;
+   }
+ 
+   &:hover span {
+      animation-play-state: paused;
+   }
+}
+ 
+@keyframes spin {
+   to {
+      offset-distance: calc(var(--offset-distance) + 100%);
+   }
+}
+// // // // // // //
+
+
+// // ANIMATION CURSOR // //
+#custom-cursor {
+   width: 10px;
+   height: 10px;
+   border: 1px solid $color-secondary;
+   border-radius: 50%;
+   position: absolute;
+   pointer-events: none;
+   z-index: 99;
 }
