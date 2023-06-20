@@ -26,5 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
  
    updateCursor();
  });
+
  
  
