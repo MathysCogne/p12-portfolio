@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
    var mouseY = 0;
    var posX = 0;
    var posY = 0;
-   var easing = 0.14;
+   var easing = 0.11;
  
    function updateCursor() {
      var distX = (mouseX - cursorSize / 2 - posX) * easing;
@@ -27,5 +27,5 @@ document.addEventListener('DOMContentLoaded', function() {
    updateCursor();
  });
 
- 
+
  

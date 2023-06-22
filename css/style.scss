@@ -8,7 +8,7 @@ $container-width-desktop: 85%;
 $container-width-mobile: 95%;
 
 $container-max-width: 1150px;
-$container-min-height: 100vh;
+$container-min-height: 50vh;
 
 $color-primary: white;
 $color-secondary: #FFD23F;
@@ -24,7 +24,9 @@ $font-family-primary: 'Poppins', sans-serif;
 $border-radius: 12px;
 
 $transition-primary: all 0.3s ease-in-out;
-// $transition-secondary: all 0.3s ease-in-out;
+
+$transition-secondary: all 0.6s ease-in-out; // Pour l'animation des cards 
+$transition-secondary-2time: all 0.3s ease-in; // Pour l'animation des cards 
 
 $shadow-primary: 0 0 10px rgba(0, 0, 0, 0.1);
 
@@ -62,8 +64,13 @@ a{
 // // HEADER NAV ///
 // // // // // // //
 header{
+   margin-right: 7.5%;
+   @media screen and (max-width: $media-query){
+      margin-right: 2.5%;
+   }
    cont-title{
       padding-top: 30px;
+      
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -71,11 +78,10 @@ header{
       position: relative;
    }
    h1{
-      height: 50vh;
+      height: 47vh;
       font-weight: 500;
-      font-size: 9vw;
+      font-size: 10vw;
       text-align: right;
-      text-transform: lowercase;
       font-weight: 300;
       white-space: nowrap;
       span{
@@ -100,15 +106,17 @@ header{
    nav{
       border-right: white solid 1px;
       display: inline-flex;
-      position: absolute;
-      height: 99.70vh;
+      position: fixed;
+      min-height: 99.70vh;
       ul{
          display: flex;
          justify-content: space-around;
          flex-direction: column;
          align-items: center;
-         text-transform: lowercase;
-         font-weight: 300;
+         li{
+            text-transform: lowercase;
+            font-weight: 300;
+         }
       }
       .nav-item{
          list-style: none;
@@ -125,6 +133,7 @@ header{
             height: 2px;
          
             transition: $transition-primary;
+            pointer-events: none;
          }
          &:hover::after{
             background-color: $color-secondary;
@@ -180,7 +189,7 @@ header{
       color: $color-primary;
       offset-path: var(--offset-path);
       offset-distance: var(--offset-distance);
-      animation: spin 15s linear infinite;
+      animation: spin 30s linear infinite;
       font-size: 14px;
       // text-transform: lowercase;
    }
@@ -195,11 +204,9 @@ header{
       offset-distance: calc(var(--offset-distance) + 100%);
    }
 }
-// // // // // // //
-
-
-
+// // // // // // // // / //
 // // ANIMATION CURSOR // //
+// // // // // // // // / //
 #custom-cursor {
    width: 10px;
    height: 10px;
@@ -208,4 +215,133 @@ header{
    position: absolute;
    pointer-events: none;
    z-index: 98;
+}
+// // // // // // // // / //
+// // project section // ///
+// // // // // // // // / //
+$padding-side-card: 22.5px;
+
+#projects {
+   display: flex;
+   flex-direction: column;
+   height: 53vh;
+   h2 {
+      width: 55%;
+      font-size: 2.5rem;
+      font-weight: 300;
+      border-bottom: 1px solid $color-secondary;
+   }
+}
+.cont-card {
+   height: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   align-items: center;
+   margin-top: 20px;
+   a{
+      width: 30%;
+   }
+}
+.card {
+   min-height: 265px;
+   display: flex;
+   flex-direction: column;
+   transform: rotateY(0);
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: $color-primary solid 1px;
+      border-radius: 40px 0;
+      transition: $transition-secondary;
+      transform: rotateY(0);
+   }
+   &:hover::before {
+      transform: rotateY(180deg);
+   }
+   &:hover .card-cta, &:hover .card-tag {
+      transform: rotateY(180deg);
+      p, span {
+         transform: rotateY(180deg);
+      }
+   }
+
+   &:hover .card-title {
+      transform: rotateY(90deg);
+      opacity: 0;
+   }
+   &:hover .card-tag::after {
+      transform: rotateY(180deg);
+      opacity: 1;
+   }
+
+   &-tag {
+      padding: 0 15px;
+      padding-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      transition: $transition-secondary;
+      transform: rotateY(0);
+      p {
+         display: inline-flex;
+         border: $color-secondary solid 0.75px;
+         margin: 5px;
+         padding: 2.5px 7.5px;
+         border-radius: 50px;
+         font-weight: 900;
+         font-size: 12px;
+      }
+      &::after {
+         content: 'loremp ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos? Lorem ipsum dolor sit amet consectetur adipisicing';
+         color: $color-primary;
+         font-family: $font-family-primary;
+         position: absolute;
+         left: 0;
+         top: 50px;
+         opacity: 0;
+         transform: rotateY(90deg);
+         transition: $transition-secondary-2time;
+         padding: 30px $padding-side-card 70px $padding-side-card;
+      }
+   }
+
+  &-title {
+    padding: 30px $padding-side-card 70px $padding-side-card;
+    font-size: 1.4rem;
+    font-weight: 300;
+    transform: rotateY(0);
+    transition: $transition-secondary-2time;
+    strong {
+      padding-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      display: block;
+    }
+  }
+
+   &-cta {
+      padding: 10px $padding-side-card;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-top: $color-primary solid 1px;
+      text-transform: uppercase;
+      font-size: 12px;
+      transition: $transition-secondary;
+      span {
+         transition: $transition-secondary;
+         color: $color-secondary;
+      }
+      p {
+         transition: $transition-secondary;
+      }
+   }
 }

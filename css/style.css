@@ -19,7 +19,7 @@ body {
 .container {
   width: 85%;
   max-width: 1150px;
-  min-height: 100vh;
+  min-height: 50vh;
   margin: auto;
   box-sizing: border-box;
 }
@@ -44,6 +44,14 @@ a {
   color: white;
 }
 
+header {
+  margin-right: 7.5%;
+}
+@media screen and (max-width: 900px) {
+  header {
+    margin-right: 2.5%;
+  }
+}
 header cont-title {
   padding-top: 30px;
   display: flex;
@@ -53,11 +61,10 @@ header cont-title {
   position: relative;
 }
 header h1 {
-  height: 50vh;
+  height: 47vh;
   font-weight: 500;
-  font-size: 9vw;
+  font-size: 10vw;
   text-align: right;
-  text-transform: lowercase;
   font-weight: 300;
   white-space: nowrap;
 }
@@ -82,14 +89,16 @@ header h2 {
 header nav {
   border-right: white solid 1px;
   display: inline-flex;
-  position: absolute;
-  height: 99.7vh;
+  position: fixed;
+  min-height: 99.7vh;
 }
 header nav ul {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
+}
+header nav ul li {
   text-transform: lowercase;
   font-weight: 300;
 }
@@ -105,6 +114,7 @@ header nav .nav-item::after {
   width: 100%;
   height: 2px;
   transition: all 0.3s ease-in-out;
+  pointer-events: none;
 }
 header nav .nav-item:hover::after {
   background-color: #FFD23F;
@@ -149,7 +159,7 @@ header nav .nav-item.flou a {
   color: white;
   offset-path: var(--offset-path);
   offset-distance: var(--offset-distance);
-  animation: spin 15s linear infinite;
+  animation: spin 30s linear infinite;
   font-size: 14px;
 }
 .circular:hover span {
@@ -169,4 +179,126 @@ header nav .nav-item.flou a {
   position: absolute;
   pointer-events: none;
   z-index: 98;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  height: 53vh;
+}
+#projects h2 {
+  width: 55%;
+  font-size: 2.5rem;
+  font-weight: 300;
+  border-bottom: 1px solid #FFD23F;
+}
+
+.cont-card {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20px;
+}
+.cont-card a {
+  width: 30%;
+}
+
+.card {
+  min-height: 265px;
+  display: flex;
+  flex-direction: column;
+  transform: rotateY(0);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: white solid 1px;
+  border-radius: 40px 0;
+  transition: all 0.6s ease-in-out;
+  transform: rotateY(0);
+}
+.card:hover::before {
+  transform: rotateY(180deg);
+}
+.card:hover .card-cta, .card:hover .card-tag {
+  transform: rotateY(180deg);
+}
+.card:hover .card-cta p, .card:hover .card-cta span, .card:hover .card-tag p, .card:hover .card-tag span {
+  transform: rotateY(180deg);
+}
+.card:hover .card-title {
+  transform: rotateY(90deg);
+  opacity: 0;
+}
+.card:hover .card-tag::after {
+  transform: rotateY(180deg);
+  opacity: 1;
+}
+.card-tag {
+  padding: 0 15px;
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  transition: all 0.6s ease-in-out;
+  transform: rotateY(0);
+}
+.card-tag p {
+  display: inline-flex;
+  border: #FFD23F solid 0.75px;
+  margin: 5px;
+  padding: 2.5px 7.5px;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 12px;
+}
+.card-tag::after {
+  content: "loremp ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos? Lorem ipsum dolor sit amet consectetur adipisicing";
+  color: white;
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: all 0.3s ease-in;
+  padding: 30px 22.5px 70px 22.5px;
+}
+.card-title {
+  padding: 30px 22.5px 70px 22.5px;
+  font-size: 1.4rem;
+  font-weight: 300;
+  transform: rotateY(0);
+  transition: all 0.3s ease-in;
+}
+.card-title strong {
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: block;
+}
+.card-cta {
+  padding: 10px 22.5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: white solid 1px;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: all 0.6s ease-in-out;
+}
+.card-cta span {
+  transition: all 0.6s ease-in-out;
+  color: #FFD23F;
+}
+.card-cta p {
+  transition: all 0.6s ease-in-out;
 }/*# sourceMappingURL=style.css.map */
