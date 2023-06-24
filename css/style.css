@@ -30,7 +30,7 @@ body {
 }
 
 h1, h2, h3, h4, a, a:link, p, li, ul, button {
-  font-family: "Poppins", sans-serif;
+  font-family: "Comfortaa", cursive;
   color: white;
 }
 
@@ -45,6 +45,7 @@ a {
 }
 
 header {
+  height: 50vh;
   margin-right: 7.5%;
 }
 @media screen and (max-width: 900px) {
@@ -52,25 +53,18 @@ header {
     margin-right: 2.5%;
   }
 }
-header cont-title {
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
 header h1 {
-  height: 47vh;
-  font-weight: 500;
+  padding-top: 12.5vh;
+  font-weight: 300;
   font-size: 10vw;
   text-align: right;
-  font-weight: 300;
   white-space: nowrap;
+  text-transform: uppercase;
+  font-family: "Comfortaa", cursive;
 }
 header h1 span {
   display: block;
-  margin-right: 14.2vw;
+  margin-right: 13.5vw;
 }
 header h1::after {
   content: "Web Developper \a Front-End | REACT";
@@ -80,8 +74,9 @@ header h1::after {
   display: block;
   position: relative;
   height: 30px;
-  margin-top: -3.82vw;
+  margin-top: -4vw;
   text-transform: lowercase;
+  font-family: "Comfortaa", cursive;
 }
 header h2 {
   display: none;
@@ -134,16 +129,21 @@ header nav .nav-item.flou a {
 
 .cta-gh {
   position: absolute;
-  top: 0px;
-  left: 123.7px;
+  top: -125px;
+  left: 150px;
+}
+.cta-gh:hover .cta-icon {
+  top: 121px;
 }
 .cta-icon {
   fill: white;
   width: 50px;
   height: 50px;
   position: relative;
-  top: 99px;
+  top: 105px;
   left: 47.5px;
+  transform: rotateZ(180deg);
+  transition: top 0.3s ease-out;
 }
 
 .circular {
@@ -181,6 +181,26 @@ header nav .nav-item.flou a {
   z-index: 98;
 }
 
+#intro {
+  display: flex;
+  height: 75vh;
+  justify-content: center;
+  align-items: center;
+}
+#intro h2 {
+  width: 70%;
+  max-width: 750px;
+  display: inline;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: justify;
+  padding: 5px 0;
+  border-bottom: 1.3px solid white;
+  border-top: 1.3px solid white;
+}
+
 #projects {
   display: flex;
   flex-direction: column;
@@ -203,7 +223,7 @@ header nav .nav-item.flou a {
   margin-top: 20px;
 }
 .cont-card a {
-  width: 30%;
+  width: 27.5%;
 }
 
 .card {
@@ -262,7 +282,7 @@ header nav .nav-item.flou a {
 .card-tag::after {
   content: "loremp ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos? Lorem ipsum dolor sit amet consectetur adipisicing";
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: "Comfortaa", cursive;
   position: absolute;
   left: 0;
   top: 50px;

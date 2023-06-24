@@ -18,8 +18,8 @@ $background-calc: black;
 $background-primary: #fff;
 $background-secondary: #F2F2F2;
 
-$font-family-primary: 'Poppins', sans-serif;
-//$font-family-secondary: 'Open Sans', sans-serif;
+$font-family-primary: 'Comfortaa', cursive;
+$font-family-secondary: 'Poppins', sans-serif;
 
 $border-radius: 12px;
 
@@ -64,29 +64,22 @@ a{
 // // HEADER NAV ///
 // // // // // // //
 header{
+   height: 50vh;
    margin-right: 7.5%;
    @media screen and (max-width: $media-query){
       margin-right: 2.5%;
    }
-   cont-title{
-      padding-top: 30px;
-      
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-   }
    h1{
-      height: 47vh;
-      font-weight: 500;
+      padding-top: 12.5vh;
+      font-weight: 300;
       font-size: 10vw;
       text-align: right;
-      font-weight: 300;
       white-space: nowrap;
+      text-transform: uppercase;
+      font-family: $font-family-primary;
       span{
          display: block;
-         margin-right: 14.2vw;
+         margin-right: 13.5vw;
       }
       &::after{
          content: 'Web Developper \A Front-End | REACT';
@@ -96,8 +89,9 @@ header{
          display: block;
          position: relative;
          height: 30px;
-         margin-top: -3.82vw;
+         margin-top: -4vw;
          text-transform: lowercase;
+         font-family: $font-family-primary;
       }
    }
    h2{
@@ -159,22 +153,29 @@ header{
 // // // // // // //
 // // CTA GITHUB ///
 // // // // // // //
-.cta {
-   &-gh{
-   position: absolute;
-   top: 0px;
-   left: 123.7px; // Largeur de la nav + Top
+.cta-{
+   &gh{
+      position: absolute;
+      top: -125px;
+      left: 150px;
+      &:hover{
+         .cta-icon{
+            top: 121px;
+         }
+      }
    }
-   &-icon{
+   &icon{
       fill: white;
       width: 50px;
       height: 50px;
       position: relative;
-      top: 99px;
+      top: 105px;
       left: 47.5px;
+      transform: rotateZ(180deg);
+      transition: top 0.3s ease-out;
    }
 }
- 
+
 .circular {
    position: absolute;
    width: calc(var(--total) * 5px);
@@ -191,14 +192,12 @@ header{
       offset-distance: var(--offset-distance);
       animation: spin 30s linear infinite;
       font-size: 14px;
-      // text-transform: lowercase;
    }
  
    &:hover span {
       animation-play-state: paused;
    }
 }
- 
 @keyframes spin {
    to {
       offset-distance: calc(var(--offset-distance) + 100%);
@@ -216,6 +215,31 @@ header{
    pointer-events: none;
    z-index: 98;
 }
+// // // // // // // // / //
+// // intro   section // ///
+// // // // // // // // / //
+#intro {
+   display: flex;
+   height: 75vh;
+   justify-content: center;
+   align-items: center;
+   h2{
+      width: 70%;
+      max-width: 750px;
+      display: inline;
+      height: fit-content;
+      
+      font-size: 1.1rem;
+      font-weight: 400;
+      // text-transform: uppercase;
+      text-align: justify;
+
+      padding: 5px 0;
+      border-bottom: 1.3px solid $color-primary;
+      border-top: 1.3px solid $color-primary;
+   }
+}
+
 // // // // // // // // / //
 // // project section // ///
 // // // // // // // // / //
@@ -241,7 +265,7 @@ $padding-side-card: 22.5px;
    align-items: center;
    margin-top: 20px;
    a{
-      width: 30%;
+      width: 27.5%;
    }
 }
 .card {
