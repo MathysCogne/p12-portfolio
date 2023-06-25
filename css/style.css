@@ -44,6 +44,10 @@ a {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   height: 50vh;
   margin-right: 7.5%;
@@ -74,7 +78,7 @@ header h1::after {
   display: block;
   position: relative;
   height: 30px;
-  margin-top: -4vw;
+  margin-top: -4.2vw;
   text-transform: lowercase;
   font-family: "Comfortaa", cursive;
 }
@@ -84,7 +88,7 @@ header h2 {
 header nav {
   border-right: white solid 1px;
   display: inline-flex;
-  position: fixed;
+  position: absolute;
   min-height: 99.7vh;
 }
 header nav ul {
@@ -172,6 +176,7 @@ header nav .nav-item.flou a {
   }
 }
 #custom-cursor {
+  background-color: #FFD23F;
   width: 10px;
   height: 10px;
   border: 1px solid #FFD23F;
@@ -184,141 +189,46 @@ header nav .nav-item.flou a {
 #intro {
   display: flex;
   height: 75vh;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 #intro h2 {
-  width: 70%;
-  max-width: 750px;
+  width: 50%;
   display: inline;
   height: -moz-fit-content;
   height: fit-content;
   font-size: 1.1rem;
   font-weight: 400;
-  text-align: justify;
-  padding: 5px 0;
+  text-align: center;
+  padding: 7.5px 0;
   border-bottom: 1.3px solid white;
   border-top: 1.3px solid white;
 }
 
-#projects {
+.section-title {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  height: 53vh;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
 }
-#projects h2 {
-  width: 55%;
-  font-size: 2.5rem;
+.section-title h2 {
+  text-transform: uppercase;
+  width: 40%;
+  font-size: 3rem;
   font-weight: 300;
   border-bottom: 1px solid #FFD23F;
-}
-
-.cont-card {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 20px;
-}
-.cont-card a {
-  width: 27.5%;
-}
-
-.card {
-  min-height: 265px;
-  display: flex;
-  flex-direction: column;
-  transform: rotateY(0);
-}
-.card::before {
-  content: "";
+  transition: transform 0.3s;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: white solid 1px;
-  border-radius: 40px 0;
-  transition: all 0.6s ease-in-out;
-  transform: rotateY(0);
+  top: 50%;
+  left: 50%;
+  transform-origin: left left;
+  will-change: transform;
 }
-.card:hover::before {
-  transform: rotateY(180deg);
+.section-stop {
+  height: 200vh;
+  align-items: flex-end;
 }
-.card:hover .card-cta, .card:hover .card-tag {
-  transform: rotateY(180deg);
-}
-.card:hover .card-cta p, .card:hover .card-cta span, .card:hover .card-tag p, .card:hover .card-tag span {
-  transform: rotateY(180deg);
-}
-.card:hover .card-title {
-  transform: rotateY(90deg);
-  opacity: 0;
-}
-.card:hover .card-tag::after {
-  transform: rotateY(180deg);
-  opacity: 1;
-}
-.card-tag {
-  padding: 0 15px;
-  padding-top: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  transition: all 0.6s ease-in-out;
-  transform: rotateY(0);
-}
-.card-tag p {
-  display: inline-flex;
-  border: #FFD23F solid 0.75px;
-  margin: 5px;
-  padding: 2.5px 7.5px;
-  border-radius: 50px;
-  font-weight: 900;
-  font-size: 12px;
-}
-.card-tag::after {
-  content: "loremp ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos? Lorem ipsum dolor sit amet consectetur adipisicing";
-  color: white;
-  font-family: "Comfortaa", cursive;
-  position: absolute;
-  left: 0;
-  top: 50px;
-  opacity: 0;
-  transform: rotateY(90deg);
-  transition: all 0.3s ease-in;
-  padding: 30px 22.5px 70px 22.5px;
-}
-.card-title {
-  padding: 30px 22.5px 70px 22.5px;
-  font-size: 1.4rem;
-  font-weight: 300;
-  transform: rotateY(0);
-  transition: all 0.3s ease-in;
-}
-.card-title strong {
-  padding-bottom: 10px;
-  font-size: 1.5rem;
-  font-weight: 500;
-  display: block;
-}
-.card-cta {
-  padding: 10px 22.5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-top: white solid 1px;
-  text-transform: uppercase;
-  font-size: 12px;
-  transition: all 0.6s ease-in-out;
-}
-.card-cta span {
-  transition: all 0.6s ease-in-out;
-  color: #FFD23F;
-}
-.card-cta p {
-  transition: all 0.6s ease-in-out;
+.section-stop h2 {
+  top: 65%;
 }/*# sourceMappingURL=style.css.map */

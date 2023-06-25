@@ -60,6 +60,9 @@ a{
    text-decoration: none;
    color: $color-primary;
 }
+html{
+   scroll-behavior: smooth;
+}
 // // // // // // //
 // // HEADER NAV ///
 // // // // // // //
@@ -89,7 +92,7 @@ header{
          display: block;
          position: relative;
          height: 30px;
-         margin-top: -4vw;
+         margin-top: -4.2vw;
          text-transform: lowercase;
          font-family: $font-family-primary;
       }
@@ -100,7 +103,7 @@ header{
    nav{
       border-right: white solid 1px;
       display: inline-flex;
-      position: fixed;
+      position: absolute;
       min-height: 99.70vh;
       ul{
          display: flex;
@@ -207,6 +210,7 @@ header{
 // // ANIMATION CURSOR // //
 // // // // // // // // / //
 #custom-cursor {
+   background-color: $color-secondary;
    width: 10px;
    height: 10px;
    border: 1px solid $color-secondary;
@@ -221,20 +225,20 @@ header{
 #intro {
    display: flex;
    height: 75vh;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
    h2{
-      width: 70%;
-      max-width: 750px;
+      width: 50%;
+      // max-width: 750px;
       display: inline;
       height: fit-content;
       
       font-size: 1.1rem;
       font-weight: 400;
       // text-transform: uppercase;
-      text-align: justify;
+      text-align: center;
 
-      padding: 5px 0;
+      padding: 7.5px 0;
       border-bottom: 1.3px solid $color-primary;
       border-top: 1.3px solid $color-primary;
    }
@@ -243,129 +247,34 @@ header{
 // // // // // // // // / //
 // // project section // ///
 // // // // // // // // / //
-$padding-side-card: 22.5px;
-
-#projects {
-   display: flex;
-   flex-direction: column;
-   height: 53vh;
-   h2 {
-      width: 55%;
-      font-size: 2.5rem;
-      font-weight: 300;
-      border-bottom: 1px solid $color-secondary;
-   }
-}
-.cont-card {
-   height: 100%;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   align-items: center;
-   margin-top: 20px;
-   a{
-      width: 27.5%;
-   }
-}
-.card {
-   min-height: 265px;
-   display: flex;
-   flex-direction: column;
-   transform: rotateY(0);
-
-   &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: $color-primary solid 1px;
-      border-radius: 40px 0;
-      transition: $transition-secondary;
-      transform: rotateY(0);
-   }
-   &:hover::before {
-      transform: rotateY(180deg);
-   }
-   &:hover .card-cta, &:hover .card-tag {
-      transform: rotateY(180deg);
-      p, span {
-         transform: rotateY(180deg);
-      }
-   }
-
-   &:hover .card-title {
-      transform: rotateY(90deg);
-      opacity: 0;
-   }
-   &:hover .card-tag::after {
-      transform: rotateY(180deg);
-      opacity: 1;
-   }
-
-   &-tag {
-      padding: 0 15px;
-      padding-top: 15px;
+.section{
+   &-title {
+      height: 100vh;
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      transition: $transition-secondary;
-      transform: rotateY(0);
-      p {
-         display: inline-flex;
-         border: $color-secondary solid 0.75px;
-         margin: 5px;
-         padding: 2.5px 7.5px;
-         border-radius: 50px;
-         font-weight: 900;
-         font-size: 12px;
-      }
-      &::after {
-         content: 'loremp ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos? Lorem ipsum dolor sit amet consectetur adipisicing';
-         color: $color-primary;
-         font-family: $font-family-primary;
-         position: absolute;
-         left: 0;
-         top: 50px;
-         opacity: 0;
-         transform: rotateY(90deg);
-         transition: $transition-secondary-2time;
-         padding: 30px $padding-side-card 70px $padding-side-card;
-      }
-   }
-
-  &-title {
-    padding: 30px $padding-side-card 70px $padding-side-card;
-    font-size: 1.4rem;
-    font-weight: 300;
-    transform: rotateY(0);
-    transition: $transition-secondary-2time;
-    strong {
-      padding-bottom: 10px;
-      font-size: 1.5rem;
-      font-weight: 500;
-      display: block;
-    }
-  }
-
-   &-cta {
-      padding: 10px $padding-side-card;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
       align-items: center;
-      border-top: $color-primary solid 1px;
-      text-transform: uppercase;
-      font-size: 12px;
-      transition: $transition-secondary;
-      span {
-         transition: $transition-secondary;
-         color: $color-secondary;
-      }
-      p {
-         transition: $transition-secondary;
+      justify-content: flex-end;
+      position: relative;
+      h2 {
+         text-transform: uppercase;
+         width: 40%;
+         font-size: 3rem;
+         font-weight: 300;
+         border-bottom: 1px solid $color-secondary;
+         
+         transition: transform 0.3s;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         // transform: translate(-50%, -50%);
+         transform-origin: left left;
+         will-change: transform;
+      }  
+   }
+   &-stop{
+      height: 200vh;
+      align-items: flex-end;
+      h2{
+         top: 65%;
       }
    }
 }
