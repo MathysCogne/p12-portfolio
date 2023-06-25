@@ -228,8 +228,9 @@ header{
    justify-content: flex-start;
    align-items: center;
    h2{
-      width: 50%;
-      // max-width: 750px;
+      width: 30%;
+      max-width: 750px;
+      min-width: 500px;
       display: inline;
       height: fit-content;
       
@@ -239,13 +240,14 @@ header{
       text-align: center;
 
       padding: 7.5px 0;
+      margin: 0 10%;
       border-bottom: 1.3px solid $color-primary;
       border-top: 1.3px solid $color-primary;
    }
 }
 
 // // // // // // // // / //
-// // project section // ///
+// //  section // ///// / //
 // // // // // // // // / //
 .section{
    &-title {
@@ -255,7 +257,7 @@ header{
       justify-content: flex-end;
       position: relative;
       h2 {
-         text-transform: uppercase;
+         // text-transform: uppercase;
          width: 40%;
          font-size: 3rem;
          font-weight: 300;
@@ -275,6 +277,46 @@ header{
       align-items: flex-end;
       h2{
          top: 65%;
+      }
+   }
+}
+// // // // // // // // / //
+// //  section about // / //
+// // // // // // // // / //
+#about{
+   h3{
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin: 0 0 10px 0;
+   }
+}
+.about{
+   &-cont{
+      display: flex;
+      justify-content: space-between;
+      article{
+         width: 45%;
+      }
+   }
+   &-tag{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 15px 0 30px 0;
+      p{
+         display: inline-block;
+         border-radius: 50px;
+         font-size: 1.1rem;
+         font-weight: 300;
+         text-transform: lowercase;
+         margin: 5px;
+         padding: 5px 10px;
+         margin-bottom: 5px;
+         border: 1px solid $color-secondary;
+      }
+   }
+   &-text{
+      p{
+         margin: 20px 0 20px 0;
       }
    }
 }

@@ -193,7 +193,9 @@ header nav .nav-item.flou a {
   align-items: center;
 }
 #intro h2 {
-  width: 50%;
+  width: 30%;
+  max-width: 750px;
+  min-width: 500px;
   display: inline;
   height: -moz-fit-content;
   height: fit-content;
@@ -201,6 +203,7 @@ header nav .nav-item.flou a {
   font-weight: 400;
   text-align: center;
   padding: 7.5px 0;
+  margin: 0 10%;
   border-bottom: 1.3px solid white;
   border-top: 1.3px solid white;
 }
@@ -213,7 +216,6 @@ header nav .nav-item.flou a {
   position: relative;
 }
 .section-title h2 {
-  text-transform: uppercase;
   width: 40%;
   font-size: 3rem;
   font-weight: 300;
@@ -231,4 +233,37 @@ header nav .nav-item.flou a {
 }
 .section-stop h2 {
   top: 65%;
+}
+
+#about h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+}
+
+.about-cont {
+  display: flex;
+  justify-content: space-between;
+}
+.about-cont article {
+  width: 45%;
+}
+.about-tag {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0 30px 0;
+}
+.about-tag p {
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-transform: lowercase;
+  margin: 5px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border: 1px solid #FFD23F;
+}
+.about-text p {
+  margin: 20px 0 20px 0;
 }/*# sourceMappingURL=style.css.map */
