@@ -266,4 +266,45 @@ header nav .nav-item.flou a {
 }
 .about-text p {
   margin: 20px 0 20px 0;
+}
+
+.form-contact {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.form-contact form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.form-contact form input, .form-contact form textarea, .form-contact form input[type=submit] {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #FFD23F;
+  font-size: 1.1rem;
+  font-weight: 300;
+  background-color: transparent;
+  color: white;
+}
+.form-contact form input:focus, .form-contact form textarea:focus, .form-contact form input[type=submit]:focus {
+  outline: none;
+}
+.form-contact form textarea {
+  resize: none;
+  height: 100px;
+}
+.form-contact form input[type=submit] {
+  width: 220px;
+  border-radius: 5px;
+  border: 1px solid #FFD23F;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.form-contact form input[type=submit]:hover {
+  background-color: #FFD23F;
 }/*# sourceMappingURL=style.css.map */

@@ -320,3 +320,51 @@ header{
       }
    }
 }
+// // // // // // // // / //
+// //  section projects // /
+// // // // // // // // / //
+
+// // // // // // // // / //
+// //  section contact // //
+// // // // // // // // / //
+.form-contact{   
+   display: flex;
+   justify-content: center;
+   height: 100vh;
+   form{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      input, textarea, input[type="submit"]{
+         margin: 10px 0;
+         padding: 10px;
+         border: none;
+         border-bottom: 1px solid $color-secondary;
+         font-size: 1.1rem;
+         font-weight: 300;
+         background-color: transparent;
+         color: $color-primary;
+         &:focus{
+            outline: none;;
+         }
+      }
+      textarea{
+         resize: none;
+         height: 100px;
+      }
+      input[type="submit"]{
+         width: 220px;
+         border-radius: 5px;
+         border: 1px solid $color-secondary;
+         color: $color-primary;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         &:hover{
+            background-color: $color-secondary;
+         }
+      }
+
+   }
+}
