@@ -88,9 +88,10 @@ header h2 {
 }
 header nav {
   border-right: white solid 1px;
+  border-bottom: white solid 1px;
   display: inline-flex;
   position: absolute;
-  min-height: 99.7vh;
+  min-height: 100vh;
 }
 @media screen and (max-width: 750px) {
   header nav {
