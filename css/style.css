@@ -176,6 +176,7 @@ header nav .nav-item.flou a {
 }
 #burger-menu ul li::marker {
   content: "";
+  display: none;
 }
 #burger-menu a {
   display: flex;

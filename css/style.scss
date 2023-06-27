@@ -176,6 +176,7 @@ header{
          li{
             &::marker{
                content: '';
+               display: none;
             }
          }
       }
