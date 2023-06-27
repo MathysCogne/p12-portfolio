@@ -22,30 +22,3 @@ window.addEventListener('scroll', function() {
     title.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
   });
 });
-
-
-
-
-var header = document.getElementById("home");
-var introSection = document.getElementById("intro");
-var ctaSection = document.getElementById("cta-gh");
-var topSection = document.getElementById("to-top");
-
-var sectionsToBlockScroll = [header, introSection, ctaSection, topSection];
-
-sectionsToBlockScroll.forEach(function(section) {
-  section.addEventListener("wheel", bloqueScroll, { passive: false });
-  section.addEventListener("touchmove", bloqueScroll, { passive: false });
-  section.addEventListener("scroll", bloqueScrollOnScrollUp, { passive: false });
-});
-
-function bloqueScroll(e) {
-  e.preventDefault();
-}
-
-function bloqueScrollOnScrollUp() {
-  if (this.scrollTop <= 0) {
-    this.scrollTop = 1;
-  }
-}
-

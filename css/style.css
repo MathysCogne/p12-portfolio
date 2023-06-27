@@ -16,19 +16,6 @@ body {
   background-color: black;
 }
 
-.container {
-  width: 85%;
-  max-width: 1150px;
-  min-height: 50vh;
-  margin: auto;
-  box-sizing: border-box;
-}
-@media screen and (max-width: 900px) {
-  .container {
-    width: 95%;
-  }
-}
-
 h1, h2, h3, h4, a, a:link, p, li, ul, button {
   font-family: "Comfortaa", cursive;
   color: white;
@@ -214,6 +201,7 @@ header nav .nav-item.flou a {
   align-items: center;
   justify-content: flex-end;
   position: relative;
+  overflow: auto;
 }
 .section-title h2 {
   width: 40%;
@@ -235,13 +223,9 @@ header nav .nav-item.flou a {
   top: 65%;
 }
 
-#about h3 {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin: 0 0 10px 0;
-}
-
 .about-cont {
+  width: 70%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -268,6 +252,49 @@ header nav .nav-item.flou a {
   margin: 20px 0 20px 0;
 }
 
+.work {
+  display: flex;
+  justify-content: space-around;
+  max-height: 95vh;
+  flex-direction: column;
+}
+.work-cont {
+  height: 100%;
+  max-height: 25vh;
+  border-bottom: 1px solid #FFD23F;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.work-cont-borderTop {
+  border-top: 1px solid #FFD23F;
+}
+.work-cont h3 {
+  font-size: 5vw;
+  font-weight: 300;
+  margin: 100px 0 0 10%;
+}
+.work-cont div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7.5%;
+}
+.work-cont p {
+  margin: 0 10px 50px 0;
+}
+.work-cont:hover {
+  cursor: pointer;
+  animation: fade-in 0.3s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #725700;
+  }
+}
 .form-contact {
   display: flex;
   justify-content: center;
@@ -306,5 +333,22 @@ header nav .nav-item.flou a {
   transition: background-color 0.3s;
 }
 .form-contact form input[type=submit]:hover {
-  background-color: #FFD23F;
+  background-color: #bf9200;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+  height: 150px;
+  border-top: 1px solid white;
+}
+footer a {
+  color: #e6e6e6;
+  transition: all 0.3s ease-in-out;
+}
+footer a:hover {
+  color: #bfbfbf;
 }/*# sourceMappingURL=style.css.map */

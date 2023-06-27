@@ -4,12 +4,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 // // // // // // //
 // // Var // / // //
 // // // // // // //
-$container-width-desktop: 85%;
-$container-width-mobile: 95%;
-
-$container-max-width: 1150px;
-$container-min-height: 50vh;
-
 $color-primary: white;
 $color-secondary: #FFD23F;
 $color-tertiary: black;
@@ -36,16 +30,6 @@ $media-query: 900px;
 // // // // // // //
 .background {
    background-color: $background-calc;
-}
-.container {
-   width: $container-width-desktop;
-   max-width: $container-max-width;
-   min-height: $container-min-height;
-   margin: auto;
-   box-sizing: border-box;
-   @media screen and (max-width: $media-query){
-      width: $container-width-mobile;
-   }
 }
 h1, h2, h3, h4, a, a:link, p, li, ul, button{ 
    font-family: $font-family-primary;
@@ -256,6 +240,8 @@ header{
       align-items: center;
       justify-content: flex-end;
       position: relative;
+
+      overflow: auto;
       h2 {
          // text-transform: uppercase;
          width: 40%;
@@ -283,15 +269,10 @@ header{
 // // // // // // // // / //
 // //  section about // / //
 // // // // // // // // / //
-#about{
-   h3{
-      font-size: 1.5rem;
-      font-weight: 300;
-      margin: 0 0 10px 0;
-   }
-}
 .about{
    &-cont{
+      width: 70%;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       article{
@@ -323,7 +304,48 @@ header{
 // // // // // // // // / //
 // //  section projects // /
 // // // // // // // // / //
-
+.work{
+   display: flex;
+   justify-content: space-around;
+   max-height: 95vh;
+   flex-direction: column;
+   &-cont{
+      height: 100%;
+      max-height: 25vh;
+      border-bottom: 1px solid $color-secondary;
+      &-borderTop{
+         border-top: 1px solid $color-secondary;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h3{
+         font-size: 5vw;
+         font-weight: 300;
+         margin: 100px 0 0 10%;
+      }
+      div{
+         display: flex;
+         justify-content: flex-end;
+         margin-right: 7.5%;
+      }
+      p{
+         margin: 0 10px 50px 0;
+      }
+      &:hover{
+         cursor: pointer;
+         animation: fade-in 0.3s ease-in-out forwards;
+      }
+   }
+}
+@keyframes fade-in {
+   0% {
+      background-color: transparent;
+   }
+   100% {       
+      background-color: darken($color-secondary, $amount: 40);
+   }
+}
 // // // // // // // // / //
 // //  section contact // //
 // // // // // // // // / //
@@ -347,7 +369,7 @@ header{
          background-color: transparent;
          color: $color-primary;
          &:focus{
-            outline: none;;
+            outline: none;
          }
       }
       textarea{
@@ -362,9 +384,28 @@ header{
          cursor: pointer;
          transition: background-color 0.3s;
          &:hover{
-            background-color: $color-secondary;
+            background-color: darken($color-secondary, $amount: 25);
          }
       }
 
+   }
+}
+// // // // // // // // / //
+// // FOOTER // // // /// //
+// // // // // // // // / //
+footer{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   row-gap: 20px;
+   height: 150px;
+   border-top: 1px solid $color-primary;
+   a{
+      color: darken($color-primary, $amount: 10);
+      transition: $transition-primary;
+      &:hover{
+         color: darken($color-primary, $amount: 25);
+      }
    }
 }
