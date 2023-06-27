@@ -39,9 +39,12 @@ header {
   height: 50vh;
   margin-right: 7.5%;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 750px) {
   header {
-    margin-right: 2.5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 400px;
   }
 }
 header h1 {
@@ -52,6 +55,11 @@ header h1 {
   white-space: nowrap;
   text-transform: uppercase;
   font-family: "Comfortaa", cursive;
+}
+@media screen and (max-width: 750px) {
+  header h1 {
+    font-size: 18vw;
+  }
 }
 header h1 span {
   display: block;
@@ -69,6 +77,12 @@ header h1::after {
   text-transform: lowercase;
   font-family: "Comfortaa", cursive;
 }
+@media screen and (max-width: 750px) {
+  header h1::after {
+    font-size: 5vw;
+    margin-top: 4vw;
+  }
+}
 header h2 {
   display: none;
 }
@@ -77,6 +91,11 @@ header nav {
   display: inline-flex;
   position: absolute;
   min-height: 99.7vh;
+}
+@media screen and (max-width: 750px) {
+  header nav {
+    display: none;
+  }
 }
 header nav ul {
   display: flex;
@@ -118,13 +137,91 @@ header nav .nav-item.flou a {
   filter: blur(3px);
 }
 
+#burger-button {
+  display: none;
+  background: none;
+  border: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+@media screen and (max-width: 750px) {
+  #burger-button {
+    display: block;
+  }
+}
+#burger-button span {
+  font-size: 40px;
+}
+#burger-menu {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.932);
+  color: white;
+  height: 100vh;
+}
+#burger-menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+#burger-menu ul li::marker {
+  content: "";
+}
+#burger-menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+#close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#close-button span {
+  font-size: 40px;
+}
+
 .cta-gh {
   position: absolute;
   top: -125px;
   left: 150px;
 }
+@media screen and (max-width: 750px) {
+  .cta-gh {
+    top: -135px;
+    left: unset;
+    right: 150px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .cta-gh {
+    display: none;
+  }
+}
 .cta-gh:hover .cta-icon {
   top: 121px;
+}
+@media screen and (max-width: 750px) {
+  .cta-gh:hover .cta-icon {
+    top: none;
+  }
 }
 .cta-icon {
   fill: white;
@@ -141,6 +238,11 @@ header nav .nav-item.flou a {
   position: absolute;
   width: calc(var(--total) * 5px);
   height: calc(var(--total) * 5px);
+}
+@media screen and (max-width: 400px) {
+  .circular {
+    display: none;
+  }
 }
 .circular span {
   --offset-path: path("M 0,50 a 50,50 0 1,1 0,1 z");
@@ -172,12 +274,23 @@ header nav .nav-item.flou a {
   pointer-events: none;
   z-index: 98;
 }
+@media screen and (max-width: 750px) {
+  #custom-cursor {
+    display: none;
+  }
+}
 
 #intro {
   display: flex;
   height: 75vh;
   justify-content: flex-start;
   align-items: center;
+}
+@media screen and (max-width: 750px) {
+  #intro {
+    height: 20vh;
+    min-height: 250px;
+  }
 }
 #intro h2 {
   width: 30%;
@@ -194,6 +307,13 @@ header nav .nav-item.flou a {
   border-bottom: 1.3px solid white;
   border-top: 1.3px solid white;
 }
+@media screen and (max-width: 750px) {
+  #intro h2 {
+    max-width: unset;
+    min-width: unset;
+    width: 80%;
+  }
+}
 
 .section-title {
   height: 100vh;
@@ -201,7 +321,12 @@ header nav .nav-item.flou a {
   align-items: center;
   justify-content: flex-end;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
+}
+@media screen and (max-width: 750px) {
+  .section-title {
+    height: 80vh;
+  }
 }
 .section-title h2 {
   width: 40%;
@@ -215,13 +340,6 @@ header nav .nav-item.flou a {
   transform-origin: left left;
   will-change: transform;
 }
-.section-stop {
-  height: 200vh;
-  align-items: flex-end;
-}
-.section-stop h2 {
-  top: 65%;
-}
 
 .about-cont {
   width: 70%;
@@ -229,8 +347,22 @@ header nav .nav-item.flou a {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 750px) {
+  .about-cont {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
 .about-cont article {
   width: 45%;
+}
+@media screen and (max-width: 750px) {
+  .about-cont article {
+    border-top: 1px solid #FFD23F;
+    padding-top: 30px;
+    width: 80%;
+  }
 }
 .about-tag {
   display: flex;
@@ -274,6 +406,11 @@ header nav .nav-item.flou a {
   font-weight: 300;
   margin: 100px 0 0 10%;
 }
+@media screen and (max-width: 750px) {
+  .work-cont h3 {
+    font-size: 8vw;
+  }
+}
 .work-cont div {
   display: flex;
   justify-content: flex-end;
@@ -300,12 +437,22 @@ header nav .nav-item.flou a {
   justify-content: center;
   height: 100vh;
 }
+@media screen and (max-width: 750px) {
+  .form-contact {
+    height: 80vh;
+  }
+}
 .form-contact form {
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+}
+@media screen and (max-width: 750px) {
+  .form-contact form {
+    width: 80%;
+  }
 }
 .form-contact form input, .form-contact form textarea, .form-contact form input[type=submit] {
   margin: 10px 0;

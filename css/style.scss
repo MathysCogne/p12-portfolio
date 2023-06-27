@@ -6,25 +6,15 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 // // // // // // //
 $color-primary: white;
 $color-secondary: #FFD23F;
-$color-tertiary: black;
 
 $background-calc: black;
-$background-primary: #fff;
-$background-secondary: #F2F2F2;
 
 $font-family-primary: 'Comfortaa', cursive;
 $font-family-secondary: 'Poppins', sans-serif;
 
-$border-radius: 12px;
-
 $transition-primary: all 0.3s ease-in-out;
 
-$transition-secondary: all 0.6s ease-in-out; // Pour l'animation des cards 
-$transition-secondary-2time: all 0.3s ease-in; // Pour l'animation des cards 
-
-$shadow-primary: 0 0 10px rgba(0, 0, 0, 0.1);
-
-$media-query: 900px;
+$media-query: 750px;
 // // // // // // //
 // // bcg cont // //
 // // // // // // //
@@ -34,7 +24,6 @@ $media-query: 900px;
 h1, h2, h3, h4, a, a:link, p, li, ul, button{ 
    font-family: $font-family-primary;
    color: $color-primary;
-
 }
 // // // // // // //
 img{
@@ -54,7 +43,10 @@ header{
    height: 50vh;
    margin-right: 7.5%;
    @media screen and (max-width: $media-query){
-      margin-right: 2.5%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 400px;
    }
    h1{
       padding-top: 12.5vh;
@@ -64,6 +56,9 @@ header{
       white-space: nowrap;
       text-transform: uppercase;
       font-family: $font-family-primary;
+      @media screen and (max-width: $media-query){
+         font-size: 18vw;
+      }
       span{
          display: block;
          margin-right: 13.5vw;
@@ -79,6 +74,10 @@ header{
          margin-top: -4.2vw;
          text-transform: lowercase;
          font-family: $font-family-primary;
+         @media screen and (max-width: $media-query){
+            font-size: 5vw;
+            margin-top: 4vw;
+         }
       }
    }
    h2{
@@ -89,6 +88,9 @@ header{
       display: inline-flex;
       position: absolute;
       min-height: 99.70vh;
+      @media screen and (max-width: $media-query){
+         display: none;
+      }
       ul{
          display: flex;
          justify-content: space-around;
@@ -125,7 +127,6 @@ header{
          // Bleur des textes
          a:hover {
             filter: blur(0);
-            
          }
          a {
             transition: filter 0.25s ease-in-out;
@@ -137,6 +138,68 @@ header{
       }
    }
 }
+
+#burger{
+   &-button {
+      display: none;
+      background: none;
+      border: none;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      @media screen and (max-width: $media-query){
+         display: block;
+      }
+      span{
+         font-size: 40px;
+      }
+   }
+   &-menu {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.932);
+      color: $color-primary;
+      height: 100vh;
+      ul{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-items: center;
+         height: 100%;
+         li{
+            &::marker{
+               content: '';
+            }
+         }
+      }
+      a{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 24px;
+      }
+   }
+}
+#close-button {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   font-size: 24px;
+   color: $color-primary;
+   background: none;
+   border: none;
+   cursor: pointer;
+   span{
+      font-size: 40px;
+   }
+}
 // // // // // // //
 // // CTA GITHUB ///
 // // // // // // //
@@ -145,14 +208,25 @@ header{
       position: absolute;
       top: -125px;
       left: 150px;
+      @media screen and (max-width: $media-query){
+         top: -135px;
+         left: unset;
+         right: 150px;
+      }
+      @media screen and (max-width: 400px){
+         display: none;
+      }
       &:hover{
          .cta-icon{
             top: 121px;
+            @media screen and (max-width: $media-query){
+               top: none;
+            }
          }
       }
    }
    &icon{
-      fill: white;
+      fill: $color-primary;
       width: 50px;
       height: 50px;
       position: relative;
@@ -167,6 +241,9 @@ header{
    position: absolute;
    width: calc(var(--total) * 5px);
    height: calc(var(--total) * 5px);
+   @media screen and (max-width: 400px){
+      display: none;
+   }
  
    span {
       --offset-path: path('M 0,50 a 50,50 0 1,1 0,1 z');
@@ -202,6 +279,9 @@ header{
    position: absolute;
    pointer-events: none;
    z-index: 98;
+   @media screen and (max-width: $media-query){
+      display: none;
+   }
 }
 // // // // // // // // / //
 // // intro   section // ///
@@ -211,6 +291,10 @@ header{
    height: 75vh;
    justify-content: flex-start;
    align-items: center;
+   @media screen and (max-width: $media-query){
+      height: 20vh;
+      min-height: 250px;
+   }
    h2{
       width: 30%;
       max-width: 750px;
@@ -227,6 +311,11 @@ header{
       margin: 0 10%;
       border-bottom: 1.3px solid $color-primary;
       border-top: 1.3px solid $color-primary;
+      @media screen and (max-width: $media-query){
+         max-width: unset;
+         min-width: unset;
+         width: 80%;
+      }
    }
 }
 
@@ -241,7 +330,10 @@ header{
       justify-content: flex-end;
       position: relative;
 
-      overflow: auto;
+      overflow: hidden;
+      @media screen and (max-width: $media-query){
+         height: 80vh;
+      }
       h2 {
          // text-transform: uppercase;
          width: 40%;
@@ -258,13 +350,6 @@ header{
          will-change: transform;
       }  
    }
-   &-stop{
-      height: 200vh;
-      align-items: flex-end;
-      h2{
-         top: 65%;
-      }
-   }
 }
 // // // // // // // // / //
 // //  section about // / //
@@ -275,8 +360,18 @@ header{
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
+      @media screen and (max-width: $media-query){
+         flex-direction: column;
+         align-items: center;
+         width: 100%;
+      }
       article{
          width: 45%;
+         @media screen and (max-width: $media-query){
+            border-top: 1px solid $color-secondary;
+            padding-top: 30px;
+            width: 80%;
+         }
       }
    }
    &-tag{
@@ -323,6 +418,9 @@ header{
          font-size: 5vw;
          font-weight: 300;
          margin: 100px 0 0 10%;
+         @media screen and (max-width: $media-query){
+            font-size: 8vw;
+         }
       }
       div{
          display: flex;
@@ -353,12 +451,18 @@ header{
    display: flex;
    justify-content: center;
    height: 100vh;
+   @media screen and (max-width: $media-query){
+      height: 80vh;
+   }
    form{
-      width: 50%;
+      width: 40%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: stretch;
+      @media screen and (max-width: $media-query){
+         width: 80%;
+      }
       input, textarea, input[type="submit"]{
          margin: 10px 0;
          padding: 10px;

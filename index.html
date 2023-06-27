@@ -31,11 +31,25 @@
   <header id="home">
     <nav>
       <ul>
-        <li class="nav-item" data-target="about"><a href="#about">About</a></li>
-        <li class="nav-item active" data-target="projects"><a href="#projects">Projects</a></li>
-        <li class="nav-item" data-target="contact"><a href="#contact">Contact</a></li>
+        <li class="nav-item"><a href="#about">About</a></li>
+        <li class="nav-item"><a href="#projects">Projects</a></li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <button id="burger-button">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div id="burger-menu" style="display: none;">
+      <button id="close-button">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
     <div class="cont-title">
       <h1>Mathys <span>Cogné</span></h1>
       <h2>Web Developper<br>Front-End | REACT</h2>
@@ -52,13 +66,6 @@
 
     <section id="intro">
       <h2>Welcome to my portfolio ! I am a front-end developer, specializing in React and driven by a deep passion for technological innovation. I create functional and visually stunning websites using the power of React, pushing the boundaries of what's possible to deliver an exceptional user experience.</h2>
-    </section>
-    <section id="to-top">
-      <div class="section-title section-stop">
-        <a href="#home">
-          <h2>Click here to return the home page</h2>
-        </a>
-      </div>
     </section>
 
     <section id="about" class="section">
@@ -144,7 +151,7 @@
         <h2>Say Hi ?</h2>
       </div>
       <article class="form-contact">
-        <form action="#" method="#">
+        <form id="contact-form" method="post">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name..">
           <label for="subject">Subject</label>
@@ -171,7 +178,7 @@
 </div>
 </div>
 </div>
-<script src="./js/gsap.js"></script>
+<script src="./js/burgerMenu.js"></script>
 <script src="./js/blurNav.js"></script>
 <script src="./js/ctaGH.js"></script>
 <script src="./js/cursor.js"></script>
