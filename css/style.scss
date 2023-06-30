@@ -518,3 +518,56 @@ footer{
 // // // // // // // // / //
 // // ANIMATIONS // // /// /
 // // // // // // // // / //
+nav{
+   animation: showInLeft 0.25s ease-in forwards;
+}
+.cont-title{
+   animation: showInRight 0.5s ease-in forwards;
+}
+.cta-gh{
+   animation: showInTop 0.4s ease-in forwards;
+}
+#intro{
+   animation: showInBottom 0.35s ease-in forwards;
+}
+
+@keyframes showInLeft {
+   0% {
+      background-color: transparent;
+      transform: translateX(-100%);
+   }
+   100% {       
+      transform: translateX(0%);
+      background-color: initial;
+   }
+}
+@keyframes showInRight {
+   0% {
+      background-color: transparent;
+      transform: translateX(40%);
+   }
+   100% {       
+      transform: translateX(0%);
+      background-color: initial;
+   }
+}
+@keyframes showInTop {
+   0% {
+      background-color: transparent;
+      transform: translateY(-100%);
+   }
+   100% {       
+      transform: translateY(0%);
+      background-color: initial;
+   }
+}
+@keyframes showInBottom {
+   0% {
+      background-color: transparent;
+      transform: translateY(50%);
+   }
+   100% {       
+      transform: translateY(0%);
+      background-color: initial;
+   }
+}
