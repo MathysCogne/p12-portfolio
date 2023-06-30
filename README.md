@@ -19,7 +19,6 @@
 
 ## Overview
 
-In progress
 
-<!-- ![screenshot](https://github.com/MathysCogne/checkout-page/blob/master/assets/screencapture-127-0-0-1-5500-index-html-2023-05-30-19_46_59.png)
-!-->
+![screenshot](https://github.com/MathysCogne/p12-portfolio/blob/main/assets/screen-v1.png)
+!
