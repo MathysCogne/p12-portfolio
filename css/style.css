@@ -434,6 +434,16 @@ header nav .nav-item.flou a {
     background-color: #725700;
   }
 }
+#confirmation-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#confirmation-message h3, #confirmation-message p {
+  font-size: 1.5rem;
+}
+
 .form-contact {
   display: flex;
   justify-content: center;
@@ -441,7 +451,7 @@ header nav .nav-item.flou a {
 }
 @media screen and (max-width: 750px) {
   .form-contact {
-    height: 80vh;
+    height: 70vh;
   }
 }
 .form-contact form {
