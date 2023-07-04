@@ -1,3 +1,4 @@
+// ZOOM TITLE SECTION
 window.addEventListener('scroll', function() {
   var sections = document.querySelectorAll('.section');
   var windowHeight = window.innerHeight;
@@ -22,3 +23,4 @@ window.addEventListener('scroll', function() {
     title.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
   });
 });
+

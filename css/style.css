@@ -54,7 +54,7 @@ header h1 {
   text-align: right;
   white-space: nowrap;
   text-transform: uppercase;
-  font-family: "Comfortaa", cursive;
+  font-family: "Poiret One", cursive;
 }
 @media screen and (max-width: 750px) {
   header h1 {
@@ -73,7 +73,7 @@ header h1::after {
   display: block;
   position: relative;
   height: 30px;
-  margin-top: -4.2vw;
+  margin-top: -3.61vw;
   text-transform: lowercase;
   font-family: "Comfortaa", cursive;
 }
@@ -92,6 +92,7 @@ header nav {
   display: inline-flex;
   position: absolute;
   min-height: 100vh;
+  z-index: 99;
 }
 @media screen and (max-width: 750px) {
   header nav {
@@ -331,6 +332,7 @@ header nav .nav-item.flou a {
   }
 }
 .section-title h2 {
+  font-family: "Poiret One", cursive;
   width: 40%;
   font-size: 3rem;
   font-weight: 300;
@@ -394,19 +396,21 @@ header nav .nav-item.flou a {
 }
 .work-cont {
   height: 100%;
-  max-height: 25vh;
+  min-height: 25vh;
   border-bottom: 1px solid #FFD23F;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .work-cont-borderTop {
   border-top: 1px solid #FFD23F;
 }
 .work-cont h3 {
-  font-size: 5vw;
+  font-family: "Poiret One", cursive;
+  font-size: 6vw;
   font-weight: 300;
-  margin: 100px 0 0 10%;
+  margin: 0 0 0 10%;
 }
 @media screen and (max-width: 750px) {
   .work-cont h3 {
@@ -416,10 +420,10 @@ header nav .nav-item.flou a {
 .work-cont div {
   display: flex;
   justify-content: flex-end;
-  margin-right: 7.5%;
+  margin: 0 10% 0 0;
 }
 .work-cont p {
-  margin: 0 10px 50px 0;
+  margin: 0 10px 0 0;
 }
 .work-cont:hover {
   cursor: pointer;
@@ -467,6 +471,7 @@ header nav .nav-item.flou a {
   }
 }
 .form-contact form input, .form-contact form textarea, .form-contact form input[type=submit] {
+  font-family: "Comfortaa", cursive;
   margin: 10px 0;
   padding: 10px;
   border: none;
@@ -484,7 +489,7 @@ header nav .nav-item.flou a {
   height: 100px;
 }
 .form-contact form input[type=submit] {
-  width: 220px;
+  width: 240px;
   border-radius: 5px;
   border: 1px solid #FFD23F;
   color: white;
@@ -512,59 +517,26 @@ footer a:hover {
   color: #bfbfbf;
 }
 
-nav {
-  animation: showInLeft 0.25s ease-in forwards;
-}
-
-.cont-title {
-  animation: showInRight 0.5s ease-in forwards;
-}
-
 .cta-gh {
   animation: showInTop 0.4s ease-in forwards;
 }
 
-#intro {
-  animation: showInBottom 0.35s ease-in forwards;
-}
-
-@keyframes showInLeft {
-  0% {
-    background-color: transparent;
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-    background-color: initial;
-  }
-}
-@keyframes showInRight {
-  0% {
-    background-color: transparent;
-    transform: translateX(40%);
-  }
-  100% {
-    transform: translateX(0%);
-    background-color: initial;
-  }
-}
 @keyframes showInTop {
   0% {
-    background-color: transparent;
+    opacity: 0.1;
     transform: translateY(-100%);
   }
   100% {
     transform: translateY(0%);
-    background-color: initial;
   }
 }
-@keyframes showInBottom {
-  0% {
-    background-color: transparent;
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(0%);
-    background-color: initial;
-  }
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 1s cubic-bezier(0.5, 0, 0, 1);
 }/*# sourceMappingURL=style.css.map */

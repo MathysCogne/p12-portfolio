@@ -10,7 +10,7 @@ $color-secondary: #FFD23F;
 $background-calc: black;
 
 $font-family-primary: 'Comfortaa', cursive;
-$font-family-secondary: 'Poppins', sans-serif;
+$font-family-secondary: 'Poiret One', cursive;
 
 $transition-primary: all 0.3s ease-in-out;
 
@@ -55,7 +55,7 @@ header{
       text-align: right;
       white-space: nowrap;
       text-transform: uppercase;
-      font-family: $font-family-primary;
+      font-family: $font-family-secondary;
       @media screen and (max-width: $media-query){
          font-size: 18vw;
       }
@@ -71,7 +71,7 @@ header{
          display: block;
          position: relative;
          height: 30px;
-         margin-top: -4.2vw;
+         margin-top: -3.61vw;
          text-transform: lowercase;
          font-family: $font-family-primary;
          @media screen and (max-width: $media-query){
@@ -89,6 +89,7 @@ header{
       display: inline-flex;
       position: absolute;
       min-height: 100vh;
+      z-index: 99;
       @media screen and (max-width: $media-query){
          display: none;
       }
@@ -326,6 +327,7 @@ header{
 // // // // // // // // / //
 .section{
    &-title {
+      
       height: 100vh;
       display: flex;
       align-items: center;
@@ -337,6 +339,7 @@ header{
          height: 80vh;
       }
       h2 {
+         font-family: $font-family-secondary;
          // text-transform: uppercase;
          width: 40%;
          font-size: 3rem;
@@ -408,18 +411,22 @@ header{
    flex-direction: column;
    &-cont{
       height: 100%;
-      max-height: 25vh;
+      min-height: 25vh;
       border-bottom: 1px solid $color-secondary;
       &-borderTop{
          border-top: 1px solid $color-secondary;
       }
       display: flex;
-      flex-direction: column;
-      justify-content: space-around;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      
       h3{
-         font-size: 5vw;
+         font-family: $font-family-secondary;
+         font-size: 6vw;
          font-weight: 300;
-         margin: 100px 0 0 10%;
+         margin: 0 0 0 10%;
          @media screen and (max-width: $media-query){
             font-size: 8vw;
          }
@@ -427,10 +434,12 @@ header{
       div{
          display: flex;
          justify-content: flex-end;
-         margin-right: 7.5%;
+         // margin-right: 7.5%;
+         margin: 0 10% 0 0;
       }
       p{
-         margin: 0 10px 50px 0;
+         margin: 0 10px 0 0;
+         
       }
       &:hover{
          cursor: pointer;
@@ -475,6 +484,7 @@ header{
          width: 80%;
       }
       input, textarea, input[type="submit"]{
+         font-family: $font-family-primary;
          margin: 10px 0;
          padding: 10px;
          border: none;
@@ -492,7 +502,7 @@ header{
          height: 100px;
       }
       input[type="submit"]{
-         width: 220px;
+         width: 240px;
          border-radius: 5px;
          border: 1px solid $color-secondary;
          color: $color-primary;
@@ -527,56 +537,29 @@ footer{
 // // // // // // // // / //
 // // ANIMATIONS // // /// /
 // // // // // // // // / //
-nav{
-   animation: showInLeft 0.25s ease-in forwards;
-}
-.cont-title{
-   animation: showInRight 0.5s ease-in forwards;
-}
 .cta-gh{
    animation: showInTop 0.4s ease-in forwards;
 }
-#intro{
-   animation: showInBottom 0.35s ease-in forwards;
-}
 
-@keyframes showInLeft {
-   0% {
-      background-color: transparent;
-      transform: translateX(-100%);
-   }
-   100% {       
-      transform: translateX(0%);
-      background-color: initial;
-   }
-}
-@keyframes showInRight {
-   0% {
-      background-color: transparent;
-      transform: translateX(40%);
-   }
-   100% {       
-      transform: translateX(0%);
-      background-color: initial;
-   }
-}
 @keyframes showInTop {
    0% {
-      background-color: transparent;
+      opacity: 0.1;
       transform: translateY(-100%);
    }
    100% {       
       transform: translateY(0%);
-      background-color: initial;
    }
 }
-@keyframes showInBottom {
-   0% {
-      background-color: transparent;
-      transform: translateY(50%);
-   }
-   100% {       
-      transform: translateY(0%);
-      background-color: initial;
-   }
+
+
+
+.reveal {
+   opacity: 0;
+   transform: translateY(50px);
+}
+
+.reveal-visible {
+   opacity: 1;
+   transform: translateY(0px);
+   transition: 1s cubic-bezier(.5, 0, 0, 1);
 }
