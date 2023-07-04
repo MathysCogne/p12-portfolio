@@ -427,7 +427,11 @@ header nav .nav-item.flou a {
 }
 .work-cont:hover {
   cursor: pointer;
-  animation: fade-in 0.3s ease-in-out forwards;
+  animation: fade-in 0.7s cubic-bezier(0, 0.7, 0.2, 0.7) forwards;
+}
+.work-cont:hover h3 {
+  transition: 0.6s cubic-bezier(0.5, 0, 0, 1);
+  transform: scale(1.125);
 }
 
 @keyframes fade-in {
@@ -435,7 +439,7 @@ header nav .nav-item.flou a {
     background-color: transparent;
   }
   100% {
-    background-color: #725700;
+    background-color: #bf9200;
   }
 }
 #confirmation-message {

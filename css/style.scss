@@ -443,7 +443,13 @@ header{
       }
       &:hover{
          cursor: pointer;
-         animation: fade-in 0.3s ease-in-out forwards;
+         
+         animation: fade-in 0.7s cubic-bezier(0,.7,.2,.7) forwards;
+      }
+      &:hover h3{
+         transition: 0.6s cubic-bezier(.5, 0, 0, 1);
+
+         transform: scale(1.125);
       }
    }
 }
@@ -452,7 +458,7 @@ header{
       background-color: transparent;
    }
    100% {       
-      background-color: darken($color-secondary, $amount: 40);
+      background-color: darken($color-secondary, $amount: 25);
    }
 }
 // // // // // // // // / //
