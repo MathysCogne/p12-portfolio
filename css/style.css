@@ -215,7 +215,9 @@ header nav .nav-item.flou a {
 }
 @media screen and (max-width: 400px) {
   .cta-gh {
-    display: none;
+    top: -115px;
+    left: unset;
+    right: 100px;
   }
 }
 .cta-gh:hover .cta-icon {
@@ -328,7 +330,7 @@ header nav .nav-item.flou a {
 }
 @media screen and (max-width: 750px) {
   .section-title {
-    height: 80vh;
+    height: 85vh;
   }
 }
 .section-title h2 {
@@ -343,6 +345,11 @@ header nav .nav-item.flou a {
   left: 50%;
   transform-origin: left left;
   will-change: transform;
+}
+@media screen and (max-width: 750px) {
+  .section-title h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .about-cont {
@@ -367,6 +374,10 @@ header nav .nav-item.flou a {
     padding-top: 30px;
     width: 80%;
   }
+}
+.about-cont article h3 {
+  font-family: "Poiret One", cursive;
+  font-size: 35px;
 }
 .about-tag {
   display: flex;
@@ -403,45 +414,72 @@ header nav .nav-item.flou a {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 750px) {
+  .work-cont {
+    min-height: 22.5vh;
+  }
+}
 .work-cont-borderTop {
   border-top: 1px solid #FFD23F;
 }
+.work-cont::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #bf9200;
+  z-index: -1;
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  transform-origin: bottom;
+}
+.work-cont:hover::after {
+  transform: scaleY(1);
+}
 .work-cont h3 {
   font-family: "Poiret One", cursive;
-  font-size: 6vw;
+  font-size: 6.5vw;
   font-weight: 300;
-  margin: 0 0 0 10%;
+  margin: 0 0 0 7.5%;
+  transition: 0.6s cubic-bezier(0.5, 0, 0, 1);
 }
 @media screen and (max-width: 750px) {
   .work-cont h3 {
-    font-size: 8vw;
+    font-size: 10vw;
+  }
+}
+.work-cont h3 span {
+  font-size: 2.5vw;
+}
+@media screen and (max-width: 750px) {
+  .work-cont h3 span {
+    font-size: 4vw;
   }
 }
 .work-cont div {
   display: flex;
-  justify-content: flex-end;
-  margin: 0 10% 0 0;
+  flex-direction: column;
+  margin: -7% 10% 0 0;
 }
-.work-cont p {
-  margin: 0 10px 0 0;
+.work-cont div p {
+  text-transform: uppercase;
+  font-weight: 400;
+  border-bottom: 1.3px solid white;
+}
+@media screen and (max-width: 750px) {
+  .work-cont div p {
+    display: none;
+  }
 }
 .work-cont:hover {
   cursor: pointer;
-  animation: fade-in 0.7s cubic-bezier(0, 0.7, 0.2, 0.7) forwards;
 }
 .work-cont:hover h3 {
-  transition: 0.6s cubic-bezier(0.5, 0, 0, 1);
-  transform: scale(1.125);
+  transform: scale(1.275);
 }
 
-@keyframes fade-in {
-  0% {
-    background-color: transparent;
-  }
-  100% {
-    background-color: #bf9200;
-  }
-}
 #confirmation-message {
   display: flex;
   align-items: center;
@@ -455,11 +493,11 @@ header nav .nav-item.flou a {
 .form-contact {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 105vh;
 }
 @media screen and (max-width: 750px) {
   .form-contact {
-    height: 70vh;
+    height: 80vh;
   }
 }
 .form-contact form {

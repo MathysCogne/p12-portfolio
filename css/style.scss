@@ -217,7 +217,9 @@ header{
          right: 150px;
       }
       @media screen and (max-width: 400px){
-         display: none;
+         top: -115px;
+         left: unset;
+         right: 100px;
       }
       &:hover{
          .cta-icon{
@@ -336,7 +338,7 @@ header{
 
       overflow: hidden;
       @media screen and (max-width: $media-query){
-         height: 80vh;
+         height: 85vh;
       }
       h2 {
          font-family: $font-family-secondary;
@@ -353,6 +355,9 @@ header{
          // transform: translate(-50%, -50%);
          transform-origin: left left;
          will-change: transform;
+         @media screen and (max-width: $media-query){
+            font-size: 2.5rem;
+         }
       }  
    }
 }
@@ -376,6 +381,10 @@ header{
             border-top: 1px solid $color-secondary;
             padding-top: 30px;
             width: 80%;
+         }
+         h3{
+            font-family: $font-family-secondary;
+            font-size: 35px;
          }
       }
    }
@@ -413,6 +422,9 @@ header{
       height: 100%;
       min-height: 25vh;
       border-bottom: 1px solid $color-secondary;
+      @media screen and (max-width: $media-query){
+         min-height: 22.5vh;
+      }
       &-borderTop{
          border-top: 1px solid $color-secondary;
       }
@@ -420,45 +432,61 @@ header{
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      &::after{
+         content: '';
+         width: 100%;
+         height: 100%;
+         transform: scaleY(0);
+         position: absolute;
+         top: 0;
+         left: 0;
+         background-color: darken($color-secondary, $amount: 25);
+         z-index: -1;
+         transition: all 0.8s cubic-bezier(.5, 0, 0, 1);
+         transform-origin: bottom;
+      }
+      &:hover::after {
+         transform: scaleY(1);
+      }
 
       
       h3{
          font-family: $font-family-secondary;
-         font-size: 6vw;
+         font-size: 6.5vw;
          font-weight: 300;
-         margin: 0 0 0 10%;
+         margin: 0 0 0 7.5%;
+         transition: 0.6s cubic-bezier(.5, 0, 0, 1);
          @media screen and (max-width: $media-query){
-            font-size: 8vw;
+            font-size: 10vw;
+         }
+         span{
+            font-size: 2.5vw;
+            @media screen and (max-width: $media-query){
+               font-size: 4vw;
+            }
          }
       }
       div{
          display: flex;
-         justify-content: flex-end;
-         // margin-right: 7.5%;
-         margin: 0 10% 0 0;
-      }
-      p{
-         margin: 0 10px 0 0;
+         flex-direction: column;
          
+         margin: -7% 10% 0 0;
+         p{
+            text-transform: uppercase;
+            font-weight: 400;
+            border-bottom: 1.3px solid $color-primary;
+            @media screen and (max-width: $media-query){
+               display: none;
+            }
+         }
       }
+
       &:hover{
          cursor: pointer;
-         
-         animation: fade-in 0.7s cubic-bezier(0,.7,.2,.7) forwards;
       }
       &:hover h3{
-         transition: 0.6s cubic-bezier(.5, 0, 0, 1);
-
-         transform: scale(1.125);
+         transform: scale(1.275);
       }
-   }
-}
-@keyframes fade-in {
-   0% {
-      background-color: transparent;
-   }
-   100% {       
-      background-color: darken($color-secondary, $amount: 25);
    }
 }
 // // // // // // // // / //
@@ -476,9 +504,9 @@ header{
 .form-contact{   
    display: flex;
    justify-content: center;
-   height: 100vh;
+   height: 105vh;
    @media screen and (max-width: $media-query){
-      height: 70vh;
+      height: 80vh;
    }
    form{
       width: 40%;
