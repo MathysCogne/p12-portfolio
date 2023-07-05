@@ -291,9 +291,9 @@ header{
 // // // // // // // // / //
 #intro {
    display: flex;
-   height: 75vh;
+   height: 49vh;
    justify-content: flex-start;
-   align-items: center;
+   align-items: flex-end;
    @media screen and (max-width: $media-query){
       height: 20vh;
       min-height: 250px;
@@ -328,7 +328,7 @@ header{
 .section{
    &-title {
       
-      height: 100vh;
+      height: 95vh;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -466,9 +466,9 @@ header{
 // // // // // // // // / //
 #confirmation-message{
       display: flex;
-      justify-content: center;
       align-items: center;
       flex-direction: column;
+      width: 50%;
    h3, p{
       font-size: 1.5rem;
    }

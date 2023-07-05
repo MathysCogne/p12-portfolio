@@ -28,7 +28,7 @@ contactForm.addEventListener('submit', function(event) {
             contactForm.style.display = 'none';
 
             // Afficher le message de confirmation
-            confirmationMessage.style.display = 'block';
+            confirmationMessage.style.display = 'flex';
         } else {
             // Gérer les cas d'erreur ici, si nécessaire
             console.error('Erreur lors du traitement du formulaire.');

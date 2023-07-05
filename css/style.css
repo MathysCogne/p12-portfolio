@@ -285,9 +285,9 @@ header nav .nav-item.flou a {
 
 #intro {
   display: flex;
-  height: 75vh;
+  height: 49vh;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
 }
 @media screen and (max-width: 750px) {
   #intro {
@@ -319,7 +319,7 @@ header nav .nav-item.flou a {
 }
 
 .section-title {
-  height: 100vh;
+  height: 95vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -444,9 +444,9 @@ header nav .nav-item.flou a {
 }
 #confirmation-message {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 50%;
 }
 #confirmation-message h3, #confirmation-message p {
   font-size: 1.5rem;

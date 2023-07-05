@@ -23,13 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $email_content .= "Message:\n$message\n";
 
       // En-têtes de l'email
-      $headers = "From: $email\r\n";
+      $headers = "From: $to\r\n";
       $headers .= "Reply-To: $email\r\n";
       $headers .= "MIME-Version: 1.0\r\n";
       $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
 
       // Envoyer l'email avec le protocole SMTP
-      $subject = "PORFOFOLIO - Nouveau message depuis le formulaire de contact";
+      $subject = "PORFOFOLIO - Nouveau message depuis le formulaire de contact / $name";
 
       // Envoyer l'email avec SMTP
       mail($to, $subject, $email_content, $headers, "-f $email");
