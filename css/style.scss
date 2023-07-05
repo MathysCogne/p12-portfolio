@@ -64,7 +64,7 @@ header{
          margin-right: 13.5vw;
       }
       &::after{
-         content: 'Developpeur \A Front-End | REACT';
+         content: 'Développeur \A Front-End | REACT';
          white-space: pre-line;
          font-size: 1.3vw;
          font-weight: 300;
@@ -272,6 +272,47 @@ header{
       offset-distance: calc(var(--offset-distance) + 100%);
    }
 }
+// // // // // // // ///
+// // BUTTON FOR TOP ///
+// // // // // // // ///
+.button-top{
+   z-index: 100;
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   border-radius: 40px;
+   border: $color-secondary 2px solid;
+   transition: $transition-primary;
+   &:hover{
+      transform: translateY(-4px);
+      border-color: $color-primary;
+   }
+   span{
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+
+      width: 42.5px;
+      height: 42.5px;
+
+      font-size: 40px;
+      color: $color-primary;
+      animation: test 1s linear alternate infinite;
+      &:hover{
+         animation-play-state: paused;
+      }
+   }
+}
+@keyframes test {
+   0% {
+      transform: translateY(3px);
+   }
+   100% {
+      transform: translateY(-1.5px);
+   }
+}
+
+
 // // // // // // // // / //
 // // ANIMATION CURSOR // //
 // // // // // // // // / //
@@ -527,8 +568,10 @@ header{
          font-weight: 300;
          background-color: transparent;
          color: $color-primary;
+         transition: $transition-primary;
          &:focus{
             outline: none;
+            border-color: $color-primary;
          }
       }
       textarea{
@@ -536,14 +579,15 @@ header{
          height: 100px;
       }
       input[type="submit"]{
+         margin: 20px 0;
          width: 240px;
          border-radius: 5px;
          border: 1px solid $color-secondary;
          color: $color-primary;
          cursor: pointer;
-         transition: background-color 0.3s;
+         transition: $transition-primary;
          &:hover{
-            background-color: darken($color-secondary, $amount: 25);
+            border-color: $color-primary;
          }
       }
 

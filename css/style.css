@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain)*/
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
   margin: 0;
@@ -66,7 +67,7 @@ header h1 span {
   margin-right: 13.5vw;
 }
 header h1::after {
-  content: "Developpeur \a Front-End | REACT";
+  content: "Développeur \a Front-End | REACT";
   white-space: pre-line;
   font-size: 1.3vw;
   font-weight: 300;
@@ -267,6 +268,41 @@ header nav .nav-item.flou a {
 @keyframes spin {
   to {
     offset-distance: calc(var(--offset-distance) + 100%);
+  }
+}
+.button-top {
+  z-index: 100;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 40px;
+  border: #FFD23F 2px solid;
+  transition: all 0.3s ease-in-out;
+}
+.button-top:hover {
+  transform: translateY(-4px);
+  border-color: white;
+}
+.button-top span {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 42.5px;
+  height: 42.5px;
+  font-size: 40px;
+  color: white;
+  animation: test 1s linear alternate infinite;
+}
+.button-top span:hover {
+  animation-play-state: paused;
+}
+
+@keyframes test {
+  0% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(-1.5px);
   }
 }
 #custom-cursor {
@@ -522,24 +558,27 @@ header nav .nav-item.flou a {
   font-weight: 300;
   background-color: transparent;
   color: white;
+  transition: all 0.3s ease-in-out;
 }
 .form-contact form input:focus, .form-contact form textarea:focus, .form-contact form input[type=submit]:focus {
   outline: none;
+  border-color: white;
 }
 .form-contact form textarea {
   resize: none;
   height: 100px;
 }
 .form-contact form input[type=submit] {
+  margin: 20px 0;
   width: 240px;
   border-radius: 5px;
   border: 1px solid #FFD23F;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 .form-contact form input[type=submit]:hover {
-  background-color: #bf9200;
+  border-color: white;
 }
 
 footer {
