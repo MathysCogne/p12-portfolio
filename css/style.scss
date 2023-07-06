@@ -286,13 +286,13 @@ header{
    align-items: center;
    justify-content: center;
    z-index: 9999;
-   animation: loader 3s ease-in forwards;
+   animation: loader 4s ease-in forwards;
    pointer-events: none;
    h2, h3 {
       text-align: center;
       color: $color-primary;
       padding: 20px;
-      animation: loader 2.25s ease-in forwards;
+      animation: loader 3.5s ease-in forwards;
    }
 }
 @keyframes loader {
