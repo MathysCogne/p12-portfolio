@@ -98,6 +98,7 @@ header{
          justify-content: space-around;
          flex-direction: column;
          align-items: center;
+         width: 75px;
          li{
             text-transform: lowercase;
             font-weight: 300;
@@ -272,9 +273,9 @@ header{
       offset-distance: calc(var(--offset-distance) + 100%);
    }
 }
-// // // // // // // ///
-// // LOADER   // // ///
-// // // // // // // ///
+// // // // // // ///
+// LOADER   // // ///
+// // // // // // ///
 .loader {
    position: fixed;
    top: 0;
@@ -405,7 +406,6 @@ header{
 // // // // // // // // / //
 .section{
    &-title {
-      
       height: 95vh;
       display: flex;
       align-items: center;
@@ -435,6 +435,67 @@ header{
             font-size: 2.5rem;
          }
       }  
+   }
+}
+// // // // // // // // / //
+// //  section services // /
+// // // // // // // // // /
+.services{
+   &-cont{
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      @media screen and (max-width: $media-query){
+         flex-direction: column;
+         align-items: center;
+         width: 100%;
+      }
+      article{
+         width: 26.5%;
+         border: $color-primary solid 1px;
+         padding: 30px 20px;
+         border-radius: 15px;
+         background-color: $background-calc;
+         z-index: 1;
+         margin: 10px;
+         border: 1px solid $color-primary;
+         position: relative;
+         @media screen and (max-width: $media-query){
+            margin-top: 30px;
+            width: 80%;
+         }
+         &::before{
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: -7.5px;
+            bottom: -7.5px;
+            left: 5px; 
+            border: 1px solid $color-primary;
+            border-left: transparent;
+            border-top: transparent;
+            border-radius: 16px;
+            z-index: -1;
+         }
+         h3{
+            font-family: $font-family-secondary;
+            font-size: 24px;
+            &::after{
+               content: '';
+               display: block;
+               width: 60%;
+               height: 1px;
+               margin: 15px 0;
+               border-bottom: #FFD23F solid 1px;
+            }
+         }
+      }
+   }
+   &-text{
+      p{
+         margin: 20px 0 20px 0;
+      }
    }
 }
 // // // // // // // // / //
