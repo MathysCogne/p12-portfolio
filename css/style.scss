@@ -18,6 +18,11 @@ $media-query: 750px;
 // // // // // // //
 // // bcg cont // //
 // // // // // // //
+#awwwards{
+   @media screen and (max-width: $media-query){
+      display: none;
+   }
+}
 .background {
    background-color: $background-calc;
 }
@@ -145,13 +150,13 @@ header{
 #burger{
    &-button {
       display: none;
-      background: none;
       border: none;
       position: fixed;
-      z-index: 1;
+      background: none;
       top: 0;
       left: 0;
       padding: 20px;
+      z-index: 1;
       @media screen and (max-width: $media-query){
          display: block;
       }
@@ -457,7 +462,6 @@ header{
          padding: 30px 20px;
          border-radius: 15px;
          background-color: $background-calc;
-         z-index: 1;
          margin: 10px;
          border: 1px solid $color-primary;
          position: relative;
